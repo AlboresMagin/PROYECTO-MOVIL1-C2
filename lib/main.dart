@@ -16,11 +16,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Practica 1',
+      title: 'Proyecto Page',
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: const ForgotPassword(),
+      initialRoute: 'changePassword',
+      routes: {
+        'home': (BuildContext context) => HomePage(),
+        'login': (BuildContext context) => Login(),
+        'register': (BuildContext context) => Register(),
+        'changePassword': (BuildContext context) => ChangePassword(),
+        'forgotPassword': (BuildContext context) => ForgotPassword(),
+      },
     );
   }
 }

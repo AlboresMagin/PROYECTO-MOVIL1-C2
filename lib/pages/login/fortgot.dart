@@ -18,14 +18,14 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           children: const [
             Icon(Icons.arrow_back, color: Colors.pinkAccent),
             SizedBox(width: 10),
-            Text('Recuperar Contraseña'),
+            Text('Recuperar contraseña'),
             Spacer(),
             Align(
               alignment: Alignment.centerRight,
               child: Image(
-              image: AssetImage('assets/images/splash.png'),
-              height: 30,
-            ),
+                image: AssetImage('assets/images/splash.png'),
+                height: 30,
+              ),
             ),
           ],
         ),
@@ -33,7 +33,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       body: Container(
         width: size.width,
         height: size.height,
-        padding: const EdgeInsets.only(right: 10, left: 0),
+        padding: const EdgeInsets.only(right: 10, left: 10),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -43,22 +43,27 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 child: const Text(
                   'Ingresa tu email para recuperar tu contraseña',
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold, color: Colors.grey),
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey),
                 ),
               ),
+              SizedBox(height: 20),
               Container(
-                padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 0),
-                margin: const EdgeInsets.only(right: 210),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 0),
+                margin: const EdgeInsets.only(right: 190),
                 child: const Text(
                   'Correo electrónico',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
                 ),
               ),
               Container(
                 margin: const EdgeInsets.only(right: 20, left: 20),
                 child: TextField(
                   textAlign: TextAlign.left,
-                  style: const TextStyle(fontSize: 18),
+                  style: const TextStyle(fontSize: 15),
                   autofocus: true,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(
@@ -70,14 +75,18 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(left: 30, top: 10),
+                padding: const EdgeInsets.fromLTRB(35, 20, 20, 20),
                 alignment: Alignment.centerLeft,
                 child: const Text(
-                  'Ingrese su correo electronico registrado y le \nenviaremos un correo electrónico que contiene un \nenlace para restablecer su contraseña',
-                  style: TextStyle(color: Colors.grey, fontSize: 15),
+                  'Ingrese su correo electrónico registrado y le enviaremos un correo electrónico que contiene un enlace para restablecer su contraseña',
+                  style: TextStyle(
+                    color: Colors.grey, 
+                    fontSize: 12
+                  ),
+                  textAlign: TextAlign.justify,
                 ),
               ),
-              const SizedBox(height: 65),
+              const SizedBox(height: 45),
               Container(
                 padding: const EdgeInsets.only(top: 260),
                 child: SizedBox(
@@ -90,7 +99,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20))),
                       child: const Text(
-                        'Enviar Solicitud',
+                        'Enviar solicitud',
                         style: TextStyle(fontSize: 18),
                       )),
                 ),

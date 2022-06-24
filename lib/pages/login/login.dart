@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 
-
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
 
@@ -23,14 +22,14 @@ class _LoginState extends State<Login> {
           children: const [
             Icon(Icons.arrow_back, color: Colors.pinkAccent),
             SizedBox(width: 10),
-            Text('Iniciar Sesion'),
+            Text('Iniciar sesión'),
             Spacer(),
             Align(
               alignment: Alignment.centerRight,
               child: Image(
-              image: AssetImage('assets/images/splash.png'),
-              height: 30,
-            ),
+                image: AssetImage('assets/images/splash.png'),
+                height: 30,
+              ),
             ),
           ],
         ),
@@ -49,29 +48,34 @@ class _LoginState extends State<Login> {
                 child: const Text(
                   'Inicia sesión con tu cuenta para continuar',
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.grey),
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey),
                 ),
               ),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                margin: const EdgeInsets.only(right: 210),
+                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 0),
+                margin: const EdgeInsets.only(right: 190),
                 child: const Text(
                   'Correo electrónico',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold, 
+                    fontSize: 13
+                  ),
                 ),
               ),
               Container(
                 margin: const EdgeInsets.only(right: 20, left: 20),
                 child: TextField(
                   textAlign: TextAlign.left,
-                  style: const TextStyle(fontSize: 18),
+                  style: const TextStyle(fontSize: 15),
                   autofocus: true,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide: BorderSide(color: Colors.black, width: 1)),
-                    hintText: 'Correo electronico',
+                    hintText: 'Correo electrónico',
                   ),
                   onChanged: (text) {
                     email = text;
@@ -80,11 +84,11 @@ class _LoginState extends State<Login> {
               ),
               Container(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                margin: const EdgeInsets.only(right: 250, top: 25),
+                    const EdgeInsets.fromLTRB(0, 10, 0, 5),
+                margin: const EdgeInsets.only(right: 250, left: 10),
                 child: const Text(
                   'Contraseña',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
                 ),
               ),
               Container(
@@ -92,7 +96,7 @@ class _LoginState extends State<Login> {
                 child: TextField(
                   obscureText: _isObscure,
                   textAlign: TextAlign.left,
-                  style: const TextStyle(fontSize: 18),
+                  style: const TextStyle(fontSize: 15),
                   autofocus: true,
                   decoration: InputDecoration(
                     suffixIcon: IconButton(
@@ -115,17 +119,16 @@ class _LoginState extends State<Login> {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(right: 20),
+                margin: const EdgeInsets.only(right: 10),
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   child: const Text(
-                    '¿Haz olvidado tu contraseña?',
+                    '¿Has olvidado tu contraseña?',
                     style: TextStyle(
-                        color: Colors.pinkAccent, fontSize: 15),
+                      color: Colors.pinkAccent, 
+                      fontSize: 13),
                   ),
-                  onPressed: () {
-                    Navigator.pushNamed(context, 'forgotPass');
-                  },
+                  onPressed: () {},
                 ),
               ),
               const SizedBox(height: 60),
@@ -135,9 +138,7 @@ class _LoginState extends State<Login> {
                   width: size.width - 70,
                   height: 50,
                   child: ElevatedButton(
-                      onPressed: () async {
-                        
-                      },
+                      onPressed: () async {},
                       style: ElevatedButton.styleFrom(
                           primary: Colors.green,
                           shape: RoundedRectangleBorder(
@@ -153,16 +154,13 @@ class _LoginState extends State<Login> {
                 children: [
                   const Text(
                     '¿Aún no tienes cuenta?',
-                    style: TextStyle(fontSize: 15),
+                    style: TextStyle(fontSize: 13),
                   ),
                   TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'register');
-                    },
+                    onPressed: () {},
                     child: const Text(
                       'Registrate',
-                      style: TextStyle(
-                          color: Colors.pinkAccent, fontSize: 15),
+                      style: TextStyle(color: Colors.pinkAccent, fontSize: 13),
                     ),
                   )
                 ],
@@ -174,4 +172,3 @@ class _LoginState extends State<Login> {
     );
   }
 }
-

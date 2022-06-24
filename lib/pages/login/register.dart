@@ -26,14 +26,14 @@ class _RegisterState extends State<Register> {
           children: const [
             Icon(Icons.arrow_back, color: Colors.pinkAccent),
             SizedBox(width: 10),
-            Text('Registrate'),
+            Text('Regístrate'),
             Spacer(),
             Align(
               alignment: Alignment.centerRight,
               child: Image(
-              image: AssetImage('assets/images/splash.png'),
-              height: 30,
-            ),
+                image: AssetImage('assets/images/splash.png'),
+                height: 30,
+              ),
             ),
           ],
         ),
@@ -41,7 +41,7 @@ class _RegisterState extends State<Register> {
       body: Container(
         width: size.width,
         height: size.height,
-        padding: const EdgeInsets.only(right: 10, left: 5),
+        padding: const EdgeInsets.only(right: 10, left: 8),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -49,25 +49,29 @@ class _RegisterState extends State<Register> {
               Container(
                 padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
                 child: const Text(
-                  'Crea una cuenta para empezar a usar la app ',
+                  'Crea una cuenta para empezar a usar la app',
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.grey),
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey),
                 ),
               ),
+              SizedBox(height: 20),
               Container(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                margin: const EdgeInsets.only(right: 270),
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 0),
+                margin: const EdgeInsets.only(right: 250),
                 child: const Text(
                   'Nombre',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
                 ),
               ),
               Container(
                 margin: const EdgeInsets.only(right: 20, left: 20),
                 child: TextField(
                   textAlign: TextAlign.left,
-                  style: const TextStyle(fontSize: 18),
+                  style: const TextStyle(fontSize: 15),
                   autofocus: true,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(
@@ -81,25 +85,27 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                margin: const EdgeInsets.only(right: 210, top: 20),
+                padding:const EdgeInsets.symmetric(vertical: 10, horizontal: 0),
+                margin: const EdgeInsets.only(right: 190),
                 child: const Text(
-                  'Correo electronico',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                  'Correo electrónico',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold, 
+                    fontSize: 13
+                  ),
                 ),
               ),
               Container(
                 margin: const EdgeInsets.only(right: 20, left: 20),
                 child: TextField(
                   textAlign: TextAlign.left,
-                  style: const TextStyle(fontSize: 18),
+                  style: const TextStyle(fontSize: 15),
                   autofocus: true,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide: BorderSide(color: Colors.black, width: 1)),
-                    hintText: 'Direccion de Correo',
+                    hintText: 'Dirección de correo',
                   ),
                   onChanged: (text) {
                     _email = text;
@@ -107,12 +113,14 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                margin: const EdgeInsets.only(right: 250, top: 20),
+                padding:const EdgeInsets.symmetric(vertical: 10, horizontal: 0),
+                margin: const EdgeInsets.only(right: 250, left: 20),
                 child: const Text(
                   'Contraseña',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold, 
+                    fontSize: 13
+                  ),
                 ),
               ),
               Container(
@@ -120,7 +128,7 @@ class _RegisterState extends State<Register> {
                 child: TextField(
                   obscureText: _isObscure,
                   textAlign: TextAlign.left,
-                  style: const TextStyle(fontSize: 18),
+                  style: const TextStyle(fontSize: 15),
                   autofocus: true,
                   decoration: InputDecoration(
                     suffixIcon: IconButton(
@@ -144,15 +152,18 @@ class _RegisterState extends State<Register> {
               ),
               Container(
                 padding: const EdgeInsets.only(left: 30, top: 15),
-                margin: const EdgeInsets.only(right: 10),
+                margin: const EdgeInsets.only(right: 8),
                 alignment: Alignment.centerLeft,
                 child: const Text(
-                  'La contraseña tiene que tener caracteres númericos y simbolos con un mínimo de 6 caracteres',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.grey),
+                  'La contraseña tiene que tener caracteres numéricos y símbolos con un mínimo de 6 caracteres',
+                  style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(190, 163, 163, 163)),
                 ),
               ),
               Container(
-                padding: const EdgeInsets.only(top: 18, left: 15),
+                padding: const EdgeInsets.only(top: 30, left: 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -171,13 +182,12 @@ class _RegisterState extends State<Register> {
                       child: RichText(
                         maxLines: 2,
                         text: const TextSpan(
-                          // text: "Al registrarme, acepto",
                           children: [
                             TextSpan(
                                 text: "Al registrarme, acepto ",
                                 style: TextStyle(color: Colors.black)),
                             TextSpan(
-                                text: "los términos y condiciones \n",
+                                text: "los términos y \ncondiciones ",
                                 style: TextStyle(color: Colors.pinkAccent)),
                             TextSpan(
                                 text: "y la ",
@@ -196,7 +206,7 @@ class _RegisterState extends State<Register> {
                 height: 28,
               ),
               Container(
-                padding: const EdgeInsets.only(top: 20),
+                padding: const EdgeInsets.only(top: 60),
                 child: SizedBox(
                   width: size.width - 70,
                   height: 50,
@@ -223,16 +233,14 @@ class _RegisterState extends State<Register> {
                 children: [
                   const Text(
                     '¿Ya tienes cuenta?',
-                    style: TextStyle(fontSize: 15),
+                    style: TextStyle(fontSize: 13),
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, 'login');
                     },
                     child: const Text(
                       'Iniciar sesión',
-                      style: TextStyle(
-                          color: Colors.pinkAccent, fontSize: 15),
+                      style: TextStyle(color: Colors.pinkAccent, fontSize: 13),
                     ),
                   )
                 ],

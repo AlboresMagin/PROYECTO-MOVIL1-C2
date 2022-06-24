@@ -21,13 +21,12 @@ class _HomePageState extends State<HomePage> {
         decoration: const BoxDecoration(color: Color(0xffffffff)),
         child: Column(
           children: [
-            // Primer widget la imagen
+            const SizedBox(height: 25),
             Container(
               padding: const EdgeInsets.only(top: 50),
               width: 150,
               child: Image.asset('assets/images/splash.png'),
             ),
-
             Container(
               margin: const EdgeInsets.only(top: 50),
               child: ElevatedButton(
@@ -38,7 +37,6 @@ class _HomePageState extends State<HomePage> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50.0))),
                 child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: const [
                     Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
                     FaIcon(FontAwesomeIcons.google),
@@ -51,13 +49,11 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-
             Container(
               margin: const EdgeInsets.only(top: 20),
               child: ElevatedButton(
                 onPressed: () => {},
                 child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: const [
                     Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
                     FaIcon(
@@ -78,13 +74,11 @@ class _HomePageState extends State<HomePage> {
                         borderRadius: BorderRadius.circular(50.0))),
               ),
             ),
-
             Container(
-              margin: const EdgeInsets.only(top: 20),
+              margin: const EdgeInsets.only(top: 30),
               child: ElevatedButton(
-                onPressed: () => {Navigator.pushNamed(context, 'register')},
+                onPressed: () => {},
                 child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: const [
                     Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
                     Icon(
@@ -114,9 +108,8 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-
             Container(
-              margin: const EdgeInsets.only(top: 48),
+              margin: const EdgeInsets.only(top: 90),
               width: 300,
               child: Column(
                 children: [
@@ -148,7 +141,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Container(
-              margin: const EdgeInsets.only(top: 35),
+              margin: const EdgeInsets.only(top: 30),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -159,11 +152,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   TextButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, 'login');
-                      },
+                      onPressed: () {},
                       child: const Text(
-                        'Iniciar sesion',
+                        'Iniciar sesión',
                         style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,

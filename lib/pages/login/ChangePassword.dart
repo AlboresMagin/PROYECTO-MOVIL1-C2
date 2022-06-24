@@ -7,6 +7,7 @@ class ChangePassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.deepPurple,
         title: Row(
@@ -18,26 +19,26 @@ class ChangePassword extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: Image(
-              image: AssetImage('assets/images/splash.png'),
-              height: 30,
+                image: AssetImage('assets/images/splash.png'),
+                height: 30,
+              ),
             ),
-            ),
-            
           ],
         ),
       ),
       body: Column(children: [
         Container(
-          height: MediaQuery.of(context).size.height * 0.25,
+          height: MediaQuery.of(context).size.height * 0.17,
           width: MediaQuery.of(context).size.width,
           padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
           child: const Center(
             child: Text(
-              'Por su seguridad, tu contraseña debe tener una longitud de entre 8 y 15 caracteres, usar mayusculas, minúsculas, contener por lo menos un numero y un caracter especial.',
+              'Por su seguridad, tu contraseña debe tener una longitud de entre 8 y 15 caracteres, usar mayúsculas, minúsculas, contener por lo menos un número y un carácter especial.',
               style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 14,
                   fontWeight: FontWeight.bold,
                   color: Color.fromARGB(255, 116, 108, 108)),
+              textAlign: TextAlign.justify,
             ),
           ),
         ),
@@ -51,7 +52,7 @@ class ChangePassword extends StatelessWidget {
                 Text(
                   'Nueva contraseña',
                   style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                       color: Colors.black),
                 ),
@@ -74,13 +75,13 @@ class ChangePassword extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
+              padding: const EdgeInsets.fromLTRB(5, 25, 0, 0),
               child: Row(
                 children: const [
                   Text(
                     'Confirmar contraseña',
                     style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 13,
                         fontWeight: FontWeight.bold,
                         color: Colors.black),
                   ),
@@ -88,27 +89,24 @@ class ChangePassword extends StatelessWidget {
               ),
             ),
             Container(
-          height: MediaQuery.of(context).size.height * 0.25,
-          width: MediaQuery.of(context).size.width,
-          padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-          child: TextField(
-            obscureText: true,
-            
-            decoration: InputDecoration(
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                borderSide: BorderSide(
-                  color: Colors.grey,
+              height: MediaQuery.of(context).size.height * 0.25,
+              width: MediaQuery.of(context).size.width,
+              padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+              child: TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(
+                      color: Colors.grey,
+                    ),
+                  ),
+                  filled: true,
+                  hintText: 'Confirmar contraseña',
+                  fillColor: Colors.white,
                 ),
               ),
-              
-              
-              filled: true,
-              hintText: 'Confirmar contraseña',
-              fillColor: Colors.white,
             ),
-          ),
-        ),
           ]),
         ),
         const Spacer(),
@@ -130,10 +128,10 @@ class ChangePassword extends StatelessWidget {
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: Colors.white),
-            ),      
+            ),
           ),
-          ),
-      ]), 
+        ),
+      ]),
     );
   }
 }
